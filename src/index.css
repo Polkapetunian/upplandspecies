@@ -13,6 +13,11 @@ code {
     monospace;
 }
 
+.app-container {
+  display: flex;
+  flex-direction: column;
+}
+
 h1{
   margin: 20px;
   text-align: center;
@@ -20,10 +25,6 @@ h1{
 
 .card-container {
   padding: 0 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .card {
@@ -32,6 +33,14 @@ h1{
   background-color: white;
   padding: 15px;
   margin: 20px;
+}
+
+.latin-name {
+  font-style: italic;
+}
+
+.biotope-list {
+  display: flex;
 }
 
 @media (min-width: 768px) {
