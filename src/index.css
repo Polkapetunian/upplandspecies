@@ -18,6 +18,15 @@ code {
   flex-direction: column;
 }
 
+.main-container {
+  display: flex;
+  flex-direction: row
+}
+
+.navbar {
+  background-color: white;
+}
+
 h1{
   margin: 20px;
   text-align: center;
@@ -44,6 +53,16 @@ h1{
 }
 
 @media (min-width: 768px) {
+  .app-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .main-container {
+    display: flex;
+    flex-direction: row
+  }
+  
   .card-container {
     padding: 0 30px;
     flex-flow: row wrap;

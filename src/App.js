@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter, Switch, Route, useHistory } from 'react-router-dom'
 
-import SpeciesList from './SpeciesList'
-import SelectedSpecies from './SelectedSpecies'
+import SpeciesList from './components/SpeciesList'
+import SelectedSpecies from './components/SelectedSpecies'
 
 export const App = () => {
   const [species, setSpecies] = useState([])
+  const [selectedSpeciesId, setSelectedSpeciesId] = useState(undefined)
 
   useEffect(() => {
     const options = {
@@ -20,12 +21,20 @@ export const App = () => {
       .catch(error => console.error(error))
 
   }, []);
-  console.log(setSpecies)
+  console.log(species)
+  console.log(selectedSpeciesId)
+  console.log(selectedSpecies)
+
+  const selectedSpecies = species.find(item => item.taxonId === selectedSpeciesId)
+
   return (
     <div className="app-container">
       <h1>Upplands landskapsarter och deras biotoper</h1>
-      <SpeciesList species={species} />
-      <SelectedSpecies species={species} />
+      <div className="main-container">
+        <SpeciesList species={species} setSelectedSpeciesId={setSelectedSpeciesId} />
+        {selectedSpecies &&
+          <SelectedSpecies species={species} selectedSpecies={selectedSpecies} />}
+      </div>
     </div>
   )
 }
