@@ -17,11 +17,11 @@ code {
 .app-container {
   display: flex;
   flex-direction: column;
+  margin: 20px;
 }
 
-.main-container {
-  display: flex;
-  flex-direction: row
+.top-header {
+  margin-left: 70px;
 }
 
 .navbar {
@@ -110,20 +110,14 @@ code {
 }
 
 h1{
-  margin: 20px;
+  margin: 0 20px 20px;
   text-align: center;
 }
 
-.card-container {
-  padding: 0 30px;
-}
-
 .card {
-  width: 350px;
   box-sizing: border-box;
   background-color: white;
   padding: 15px;
-  margin: 20px;
 }
 
 .latin-name {
@@ -138,11 +132,6 @@ h1{
   .app-container {
     display: flex;
     flex-direction: column;
-  }
-  
-  .main-container {
-    display: flex;
-    flex-direction: row
   }
 
   .card-container {
