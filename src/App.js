@@ -3,10 +3,12 @@ import { BrowserRouter, Switch, Route, useHistory } from 'react-router-dom'
 
 import SpeciesList from './components/SpeciesList'
 import SelectedSpecies from './components/SelectedSpecies'
+import Burger from './components/Burger'
 
 export const App = () => {
   const [species, setSpecies] = useState([])
   const [selectedSpeciesId, setSelectedSpeciesId] = useState(undefined)
+  const [open, setOpen] = useState(false)
 
   useEffect(() => {
     const options = {
@@ -31,7 +33,8 @@ export const App = () => {
     <div className="app-container">
       <h1>Upplands landskapsarter och deras biotoper</h1>
       <div className="main-container">
-        <SpeciesList species={species} setSelectedSpeciesId={setSelectedSpeciesId} />
+        <Burger open={open} setOpen={setOpen} />
+        <SpeciesList species={species} setSelectedSpeciesId={setSelectedSpeciesId} open={open} setOpen={setOpen} />
         {selectedSpecies &&
           <SelectedSpecies species={species} selectedSpecies={selectedSpecies} />}
       </div>

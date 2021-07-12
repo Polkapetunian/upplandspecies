@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react'
 
-const SpeciesList = ({ species, setSelectedSpeciesId }) => {
+const SpeciesList = ({ species, setSelectedSpeciesId, open }) => {
 
   return (
-    <div className="navbar">
+    <nav className={open ? "navbar" : "closed-navbar"} role="navigation">
       {species.map((item) => {
         return (
-          <ul className="navbar" key={item.swedishName}>
-            <button onClick={() => setSelectedSpeciesId(item.taxonId)}><li >{item.swedishName}</li></button>
+          <ul className="species-list" key={item.swedishName}>
+            <li onClick={() => setSelectedSpeciesId(item.taxonId)}>{item.swedishName}</li>
           </ul>
         )
       })}
-    </div>
+    </nav>
   )
 }
 export default SpeciesList
