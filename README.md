@@ -6,10 +6,14 @@ Den här appen visar Upplands landskapsarter. Informationen om arterna hämtas f
 
 ## API endpoints 
 
-GET /speciesdata/biotopes
+**GET /speciesdata/biotopes**
 
 Användes för att hämta biotopinformation om arterna. (Filtrerades för att bara visa de biotoper som är viktiga för arten.)
 
 This endpoint was used to fetch biotope information of the species. (The data was filtered so that only the important biotopes are displayed.)
 
+**GET /speciesdata/redlist**
 
+Användes för att hämta rödlistningskategori. (Kom som bokstavskoder men omvandlades till klartext.)
+
+This endpoint was used to fetch redlist information about the species. (The original two-letter-code was transformed to words in the UI.)

@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 
 const SpeciesList = ({ species, setSelectedSpeciesId, open }) => {
 
   return (
-    <nav className={open ? "navbar" : "closed-navbar"} role="navigation">
+    <nav className={open ? "navbar" : "closed-navbar"}>
+      <p onClick={() => setSelectedSpeciesId('')}>Vad är detta?</p>
       {species.map((item) => {
         return (
           <ul className="species-list" key={item.swedishName}>
@@ -15,5 +16,3 @@ const SpeciesList = ({ species, setSelectedSpeciesId, open }) => {
   )
 }
 export default SpeciesList
-
-//eslint-disable-next-line react-hooks/exhaustive-deps

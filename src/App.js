@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 
+import Introduction from './components/Introduction'
 import SpeciesList from './components/SpeciesList'
 import SelectedSpecies from './components/SelectedSpecies'
 import Burger from './components/Burger'
@@ -44,19 +45,21 @@ export const App = () => {
 
   }, []);
 
-  console.log(redlistInfo)
   const selectedRedlistInfo = redlistInfo.find(item => item.taxonId === selectedSpeciesId)
-
 
   return (
     <div className="app-container">
       <h1 className="top-header">Upplands landskapsarter</h1>
-      <div className="nav-container" ref={node}>
-        <Burger open={open} setOpen={setOpen} />
-        <SpeciesList species={species} setSelectedSpeciesId={setSelectedSpeciesId} open={open} setOpen={setOpen} />
+      <div className="main-container">
+        <div className="nav-container" ref={node}>
+          <Burger open={open} setOpen={setOpen} />
+          <SpeciesList species={species} setSelectedSpeciesId={setSelectedSpeciesId} open={open} setOpen={setOpen} />
+        </div>
+        {!selectedSpecies &&
+          <Introduction />}
+        {selectedSpecies &&
+          <SelectedSpecies species={species} selectedSpecies={selectedSpecies} selectedRedlistInfo={selectedRedlistInfo} />}
       </div>
-      {selectedSpecies &&
-        <SelectedSpecies species={species} selectedSpecies={selectedSpecies} selectedRedlistInfo={selectedRedlistInfo} />}
     </div>
   )
 }

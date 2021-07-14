@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 
 const SelectedSpecies = ({ selectedSpecies, selectedRedlistInfo }) => {
-  console.log(selectedRedlistInfo)
 
   const redlistValue = selectedRedlistInfo.speciesData.category
 
