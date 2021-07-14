@@ -5,10 +5,11 @@ const SelectedSpecies = ({ selectedSpecies, selectedRedlistInfo }) => {
 
   const redlistValue = selectedRedlistInfo.speciesData.category
 
+
   return (
     selectedSpecies && selectedRedlistInfo &&
     <div className="card" key={selectedSpecies.swedishName}>
-      <h2>{selectedSpecies.swedishName}</h2>
+      <h2>{selectedSpecies.swedishName.charAt(0).toUpperCase() + selectedSpecies.swedishName.slice(1)}</h2>
       <h3 className="latin-name">{selectedSpecies.scientificName}</h3>
       <h3>Rödlistningskategori</h3>
       {redlistValue === 'NE' && <p>Ej bedömd</p>}
