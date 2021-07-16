@@ -46,17 +46,16 @@ export const App = () => {
   const selectedRedlistInfo = redlistInfo.find((item) => item.taxonId === selectedSpeciesId)
 
   return (
-    <div className='app-container'>
-      <h1 className='top-header'>Upplands landskapsarter</h1>
-      <div className='main-container'>
-        <div className='nav-container' ref={node}>
+    <div className="app-container">
+      <h1 className="top-header">Upplands landskapsarter</h1>
+      <div className="main-container">
+        <div className="nav-container" ref={node}>
           <Burger open={open} setOpen={setOpen} />
           <SpeciesList
             species={species}
             setSelectedSpeciesId={setSelectedSpeciesId}
             open={open}
-            setOpen={setOpen}
-          />
+            setOpen={setOpen} />
         </div>
         {!selectedSpecies
           && <Introduction />}
