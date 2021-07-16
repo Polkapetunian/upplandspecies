@@ -28,7 +28,7 @@ export const App = () => {
       .catch((error) => console.error(error))
   }, []);
 
-  const selectedSpecies = species.find((item) => item.taxonId === selectedSpeciesId)
+  const selectedSpecies = species.find((item) => item.taxonId === selectedSpeciesId);
 
   useEffect(() => {
     const options = {
@@ -43,7 +43,7 @@ export const App = () => {
       .catch((error) => console.error(error))
   }, []);
 
-  const selectedRedlistInfo = redlistInfo.find((item) => item.taxonId === selectedSpeciesId)
+  const selectedRedlistInfo = redlistInfo.find((item) => item.taxonId === selectedSpeciesId);
 
   return (
     <div className="app-container">
