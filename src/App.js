@@ -31,13 +31,13 @@ export const App = () => {
   const selectedSpecies = species.find((item) => item.taxonId === selectedSpeciesId);
 
   useEffect(() => {
-    const options = {
+    const options2 = {
       method: 'GET',
       headers: {
         'Ocp-Apim-Subscription-Key': process.env.REACT_APP_API_KEY
       }
     }
-    fetch('https://api.artdatabanken.se/information/v1/speciesdataservice/v1/speciesdata/redlist?taxa=100067,100013,100763,1079,221913,245630&period=6', options)
+    fetch('https://api.artdatabanken.se/information/v1/speciesdataservice/v1/speciesdata/redlist?taxa=100067,100013,100763,1079,221913,245630&period=6', options2)
       .then((res) => res.json())
       .then((json) => setRedlistInfo(json))
       .catch((error) => console.error(error))
