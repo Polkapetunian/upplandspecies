@@ -3,7 +3,7 @@ import React from 'react'
 const SpeciesList = ({ species, setSelectedSpeciesId, open }) => {
   return (
     <nav className={open ? 'navbar' : 'closed-navbar'}>
-      <button className="navlink" type="button" onClick={() => setSelectedSpeciesId('')} onKeyDown={() => setSelectedSpeciesId('')}>Vad är detta?</button>
+      <button className="navlink" type="button" onClick={() => setSelectedSpeciesId('')} onKeyDown={() => setSelectedSpeciesId('')}>Vad är det här?</button>
       <p className="navheading">Välj en art</p>
       {
         species.map((item) => {
